@@ -1,5 +1,5 @@
 #!/usr/bin/bash
-POKEMON_API="https://pokeadi.co/api/v2/pokemon/"
+POKEMON_API="https://pokeapi.co/api/v2/pokemon/"
 POKEMON_NAME="pikachu"
 FINAL_URL="$POKEMON_API$POKEMON_NAME"
 curl -s -o data.json "$FINAL_URL"
