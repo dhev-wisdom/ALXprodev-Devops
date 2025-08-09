@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+POKEMON_URL=https://pokeapi.co/api/v2/pokemon/
+POKEMONS=("bulbasaur" "ivysaur" "venusaur" "charmander" "charmeleon")
+
+mkdir -p pokemon_data
+
+for pokemon in "${POKEMONS[@]}";
+do
+	echo "Fetching data for ${pokemon}..."
+	url="$POKEMON_URL$pokemon"
+	file="pokemon_data/$pokemon.json"
+	curl -s -o "$file" "$url"
+	if [ $? -eq 0 ]; then
+		echo "Saved data to pokemon_data/${pokemon}.json ✅"
+	else
+		echo "An error occured. Failed to fetch data for ${pokemon}"
+	fi
+	sleep 5
+done
