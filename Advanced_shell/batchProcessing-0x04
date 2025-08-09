@@ -23,6 +23,10 @@ for pokemon in "${POKEMONS[@]}"; do
 	fetch_pokemon "$pokemon" &
 done
 
+jobs
+
 wait
+
+jobs -p | xargs -r kill
 
 echo "All Pokemon data fetched"
