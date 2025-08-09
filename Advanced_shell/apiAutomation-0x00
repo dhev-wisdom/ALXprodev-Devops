@@ -4,7 +4,7 @@ POKEMON_NAME="pikachu"
 FINAL_URL="$POKEMON_API$POKEMON_NAME"
 curl -s -o data.json "$FINAL_URL"
 if [ $? -ne 0 ]; then
-	echo "[$(date)] Failed to fetch data $FINAL_URL" >> "errors.txt"
+	echo "[$(date)] Failed to fetch data from $FINAL_URL" >> "errors.txt"
 else
 	echo "Data successfully saved to data.json"
 fi
